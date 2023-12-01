@@ -17,6 +17,7 @@ fn run(input: String) {
         .sum();
     println!("{}", output);
 }
+
 fn replace_nums(s: &str) -> String {
     let nums = [
         ("eightwo", "82"),
@@ -38,8 +39,8 @@ fn replace_nums(s: &str) -> String {
         ("nine", "9"),
     ];
     let mut new_string = String::from(s);
-    for (string, num) in nums {
+    nums.iter().for_each(|(string, num)| {
         new_string = new_string.replace(string, num);
-    }
+    });
     new_string
 }
